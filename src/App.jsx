@@ -6,7 +6,9 @@ const App = () => {
   return (
     <div className="ui container">
       <Search />
-      <Card />
+      <div className="ui segment">
+        <Card />
+      </div>
     </div>
   );
 };
