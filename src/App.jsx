@@ -8,6 +8,9 @@ const App = () => {
       <Search />
       <div className="ui segment">
         <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   );
