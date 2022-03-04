@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Search = () => {
+  const [term, setTerm] = useState("");
+
   return (
     <div className="ui form">
       <div className="field">
@@ -8,6 +10,8 @@ const Search = () => {
         <input
           type="text"
           placeholder="Job title, dept., agency, series or occupation"
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
         />
       </div>
     </div>

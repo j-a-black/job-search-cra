@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="ui card">
+    <div className="ui fluid card">
       <div className="content">
         <div className="header">Cute Dog</div>
         <div className="meta">2 days ago</div>
