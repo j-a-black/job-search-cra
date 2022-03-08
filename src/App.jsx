@@ -5,7 +5,7 @@ import Card from "./components/Card";
 import usajobs from "./data/usajobs";
 
 const App = () => {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState([]);
 
   const onTermSubmit = async (term) => {
     const response = await usajobs.get("/api/search", {
@@ -13,19 +13,18 @@ const App = () => {
         Keyword: term,
       },
     });
-
-    setResults(response);
+    let data = await response.data.SearchResult.SearchResultItems;
+    setResults(data);
   };
+
+  const renderCards = results.map((item, index) => {
+    return <Card key={index} item={item} />;
+  });
 
   return (
     <div className="ui container">
       <Search onTermSubmit={onTermSubmit} />
-      <div className="ui segment">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <div className="ui segment">{renderCards}</div>
       {console.log(results)}
     </div>
   );

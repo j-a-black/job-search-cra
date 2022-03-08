@@ -24,7 +24,6 @@ const Search = ({ onTermSubmit }) => {
             onChange={onInputChange}
           />
         </div>
-        {console.log(term)}
       </form>
     </div>
   );

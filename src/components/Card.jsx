@@ -1,21 +1,22 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ item }) => {
   return (
     <div className="ui fluid card">
       <div className="content">
-        <div className="header">Cute Dog</div>
+        <div className="header">
+          {item.MatchedObjectDescriptor.PositionTitle}
+        </div>
         <div className="meta">2 days ago</div>
+        <span>
+          {item.MatchedObjectDescriptor.PositionLocation[0].LocationName}
+        </span>
+        <span>{item.MatchedObjectDescriptor.PositionLocation[0].Latitude}</span>
+        <span>
+          {item.MatchedObjectDescriptor.PositionLocation[0].Longitude}
+        </span>
         <div className="description">
-          <p>
-            Cute dogs come in a variety of shapes and sizes. Some cute dogs are
-            cute for their adorable faces, others for their tiny stature, and
-            even others for their massive size.
-          </p>
-          <p>
-            Many people also have their own barometers for what makes a cute
-            dog.
-          </p>
+          {item.MatchedObjectDescriptor.UserArea.Details.JobSummary}
         </div>
       </div>
       <div className="extra content">
