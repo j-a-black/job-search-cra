@@ -7,8 +7,10 @@ const Card = ({ item }) => {
         <div className="header">
           {item.MatchedObjectDescriptor.PositionTitle}
         </div>
-        <div className="meta">2 days ago</div>
-        <span>
+        <div className="meta">
+          Posted: {item.MatchedObjectDescriptor.PublicationStartDate}
+        </div>
+        <span className="block">
           {item.MatchedObjectDescriptor.PositionLocation[0].LocationName}
         </span>
         <span>{item.MatchedObjectDescriptor.PositionLocation[0].Latitude}</span>
