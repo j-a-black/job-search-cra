@@ -1,13 +1,11 @@
-// import axios from "axios";
+import axios from "axios";
 
-// const KEY = ;
+const KEY = process.env.REACT_APP_USAJOBS_KEY;
 
-// export default axios.create({
-//   baseURL: "https://www.googleapis.com/youtube/v3",
-//   params: {
-//     part: "snippet",
-//     type: "video",
-//     maxResults: 10,
-//     key: KEY,
-//   },
-// });
+export default axios.create({
+  baseURL: "https://data.usajobs.gov/",
+  params: {
+    Host: "data.usajobs.gov",
+    "Authorization-Key": KEY,
+  },
+});
