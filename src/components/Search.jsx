@@ -24,6 +24,10 @@ const Search = ({ onTermSubmit }) => {
             onChange={onInputChange}
           />
         </div>
+        <div className="field">
+          <label>Location</label>
+          <input type="text" placeholder="City, State, or Zip Code" />
+        </div>
       </form>
     </div>
   );
