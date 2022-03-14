@@ -7,10 +7,10 @@ import usajobs from "./data/usajobs";
 const App = () => {
   const [results, setResults] = useState([]);
 
-  const onTermSubmit = async (term) => {
+  const onTermSubmit = async (userInput) => {
     const response = await usajobs.get("/api/search", {
       params: {
-        Keyword: term,
+        Keyword: userInput.term,
       },
     });
     let data = await response.data.SearchResult.SearchResultItems;
