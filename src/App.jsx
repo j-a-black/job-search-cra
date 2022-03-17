@@ -8,11 +8,15 @@ const App = () => {
   const [results, setResults] = useState([]);
 
   const onTermSubmit = async (userInput) => {
-    const response = await usajobs.get("/api/search", {
-      params: {
-        Keyword: userInput.term,
-      },
-    });
+    const response = await usajobs
+      .get("/api/searchhh", {
+        params: {
+          Keyword: userInput.term,
+          LocationName: userInput.Location,
+        },
+      })
+      .then((res) => console.log("res", res))
+      .catch((err) => console.log("err", err));
     let data = await response.data.SearchResult.SearchResultItems;
     setResults(data);
   };

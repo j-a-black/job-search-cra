@@ -36,6 +36,7 @@ const Search = ({ onTermSubmit }) => {
           />
         </div>
         {console.log(userInput.term, userInput.location)}
+        <button>Submit</button>
       </form>
     </div>
   );
